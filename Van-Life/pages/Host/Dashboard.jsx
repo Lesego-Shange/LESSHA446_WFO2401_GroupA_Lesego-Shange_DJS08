@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
 import { getHostVans } from "../../src/api";
 
+// eslint-disable-next-line react-refresh/only-export-components
+export const loader = async () => {
+  const vans = await getHostVans();
+  return { vans };
+};
+
 export default function Dashboard() {
   const [vans, setVans] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
